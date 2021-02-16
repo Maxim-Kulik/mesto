@@ -8,13 +8,13 @@ let inputName = document.querySelector('.Form__input_name');
 let inputStatus = document.querySelector('.Form__input_status');
 
 function PopUpActive() {
-FormOverlay.classList.remove('Overlay__none');
+FormOverlay.classList.remove('Overlay_none');
 
 }
 EditButton.addEventListener('click', PopUpActive);
 
 function PopUpClose() {
-  FormOverlay.classList.add('Overlay__none');
+  FormOverlay.classList.add('Overlay_none');
 }
 CloseButton.addEventListener('click', PopUpClose);
 
