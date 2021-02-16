@@ -1,9 +1,0 @@
-.content {
-  max-width: 880px;
-}
-
-@media (max-width:620px) {
-.content {
-    width:282px;
-  }
-}
