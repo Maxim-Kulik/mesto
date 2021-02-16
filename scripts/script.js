@@ -8,7 +8,7 @@ let inputName = document.querySelector('.Form__input_name');
 let inputStatus = document.querySelector('.Form__input_status');
 
 function PopUpActive() {
-FormOverlay.classList.remove('popup_none');
+FormOverlay.classList.remove('popup__none');
 
 }
 EditButton.addEventListener('click', PopUpActive);
