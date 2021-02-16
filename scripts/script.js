@@ -1,4 +1,4 @@
-let FormOverlay = document.querySelector('.Form__overlay');
+let FormOverlay = document.querySelector('.Overlay');
 let EditButton = document.querySelector('.Edit-Button');
 let CloseButton = document.querySelector('.Close-button');
 let FormButton = document.querySelector('.Form__button');
