@@ -1,0 +1,10 @@
+.Profile__description {
+  color:white;
+  max-width:294px;
+}
+
+@media (max-width:700px) {
+ .Profile__description {
+    width:189px;
+  }
+}

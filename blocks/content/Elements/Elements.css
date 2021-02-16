@@ -1,0 +1,30 @@
+.Elements {
+  max-width: 880px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 282px);
+  grid-template-rows: repeat(2, 362px);
+  column-gap: 17px;
+  row-gap: 20px;
+  justify-content: center;
+}
+
+@media (max-width:920px) {
+  .Elements {
+    grid-template-columns: repeat(2, 282px);
+    grid-template-rows: repeat(3, 362px);
+  }
+}
+
+@media (max-width:620px) {
+.Elements {
+    max-width: 880px;
+    margin-top: 36px;
+    padding-left: 19px;
+    padding-right:19px ;
+    grid-template-columns: repeat(1, 282px);
+    grid-template-rows: repeat(6, 362px);
+    column-gap: 17px;
+    row-gap: 20px;
+  }
+}
