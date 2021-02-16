@@ -1,0 +1,16 @@
+.Form__input {
+  width:358px;
+  height: 27px;
+  margin-bottom:30px;
+  border:none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.Form__input:last-child {
+  margin-bottom:0px;
+}
+
+@media (max-width:620px) {
+.Form__input {
+    width:238px;
+  }
+}
