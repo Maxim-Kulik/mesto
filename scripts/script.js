@@ -14,7 +14,7 @@ FormOverlay.classList.remove('popup__none');
 EditButton.addEventListener('click', PopUpActive);
 
 function PopUpClose() {
-  FormOverlay.classList.add('popup_none');
+  FormOverlay.classList.add('popup__none');
 }
 CloseButton.addEventListener('click', PopUpClose);
 
