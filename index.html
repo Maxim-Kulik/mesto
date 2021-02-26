@@ -71,15 +71,17 @@
   <footer class="footer page__blocks">
     <p class="footer__copyright">© 2020 Mesto Russia</p>
   </footer>
-  <div class="overlay overlay_none">
+  <div class="overlay">
     <div class="form page__form">
       <button class="close-button" type="button"></button>
       <h2 class=form__title>Редактировать профиль</h2>
-      <div class="form__inputs">
-        <input class="form__input form__input_name" type="text" value="Жак-Ив Кусто">
-        <input class="form__input form__input_status" type="text" value="Исследователь океана">
-      </div>
-      <button class="form__button">Сохранить</button>
+      <form class="form__profile" method="POST" name="form__profile">
+        <div class="form__inputs">
+          <input class="form__input form__input_input-name_name" type="text" placeholder="Имя" name="name">
+          <input class="form__input form__input_input-name_status" type="text" placeholder="О себе" name="status">
+        </div>
+        <button class="form__button" type="submit">Сохранить</button>
+      </form>
     </div>
   </div>
   <script src="scripts/script.js"></script>
