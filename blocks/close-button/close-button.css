@@ -1,15 +1,15 @@
 .close-button {
   position: absolute;
-  top: -40px;
-  right: -40px;
+  top: -36px;
+  right: -34px;
   background-image: url(../../images/Close-Icon.svg);
-  width:40px;
-  height:40px;
+  width:35px;
+  height:35px;
   background-color: transparent;
   background-repeat: no-repeat;
   border:none;
   padding: 0;
-  background-size: contain;
+  background-size: 35px 35px;
   cursor: pointer;
 }
 .close-button:hover {
@@ -21,8 +21,11 @@
 
 @media (max-width:620px) {
   .close-button {
-    width: 26px;
-    height: 26px;
+    background-image: url(../../images/Close-Icon-mobile.svg);
+    width: 21px;
+    height: 21px;
+    background-size: cover;
     right: 0;
+    top: -40px;
   }
 }
