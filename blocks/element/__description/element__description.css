@@ -1,5 +1,8 @@
 .element__description {
   display: flex;
+  align-items: flex-end;
+  margin-top: 25px;
+  margin-bottom: 31px;
   width: 246px;
 }
 
