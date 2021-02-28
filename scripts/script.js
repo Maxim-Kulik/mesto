@@ -1,5 +1,5 @@
 let formOverlay = document.querySelector('.overlay');
-let editButton = document.querySelector('.edit-Button');
+let editButton = document.querySelector('.edit-button');
 let closeButton = document.querySelector('.close-button');
 let formButton = document.querySelector('.form__button');
 let formName = document.querySelector('.profile__name');

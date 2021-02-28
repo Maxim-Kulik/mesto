@@ -1,4 +1,4 @@
-.add-Button {
+.add-button {
   width: 150px;
   height: 50px;
   background-color: black;
@@ -10,13 +10,13 @@
   margin-bottom: auto;
   background-image: url(../../images/Add-Button.svg);
 }
-.add-Button:hover {
+.add-button:hover {
   opacity: 0.6;
   cursor:pointer;
  }
 
 @media (max-width:620px) {
- .add-Button {
+ .add-button {
     width: 282px;
     background-image: url(../../images/Add-Button-mobile.svg);
   }
