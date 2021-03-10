@@ -23,59 +23,17 @@
       <button class="add-button" type="button" ></button>
     </section>
     <section class="elements">
-      <div class="element">
-        <img class="element__image" src="images/Element-Image1.png" alt="Карачаевск">
-        <div class="element__description">
-          <h2 class="element__title">Карачаевск</h2>
-          <button class="group" type="button"></button>
-        </div>
-        
-      </div>
-      <div class="element">
-        <img class="element__image" src="images/Element-Image2.png" alt="Гора Эльбрус">
-        <div class="element__description">
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <button class="group" type="button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img class="element__image" src="images/Element-Image3.png" alt="Домбай">
-        <div class="element__description">
-          <h2 class="element__title">Домбай</h2>
-          <button class="group" type="button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img class="element__image" src="images/Element-Image2.png" alt="Домбай">
-        <div class="element__description">
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <button class="group" type="button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img class="element__image" src="images/Element-Image3.png" alt="Карачаево-Черкевск">
-        <div class="element__description">
-          <h2 class="element__title">Домбай</h2>
-          <button class="group" type="button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img class="element__image" src="images/Element-Image1.png" alt="Гора Эльбрус">
-        <div class="element__description">
-          <h2 class="element__title">Карачаево-Черкессия</h2>
-          <button class="group" type="button"></button>
-        </div>
-      </div>
+     
     </section>
   </main>
   <footer class="footer page__blocks">
     <p class="footer__copyright">© 2020 Mesto Russia</p>
   </footer>
-  <div class="overlay">
+  <div class="overlay popup__edit">
     <div class="form page__form">
       <button class="close-button" type="button"></button>
       <h2 class=form__title>Редактировать профиль</h2>
-      <form class="form__profile" method="POST" name="form__profile">
+      <form class="form__profile form__profile_edit" method="POST" name="form__profile_edit">
         <div class="form__inputs">
           <input class="form__input form__input_input-name_name" type="text" placeholder="Имя" name="name">
           <input class="form__input form__input_input-name_status" type="text" placeholder="О себе" name="status">
@@ -83,6 +41,19 @@
         <button class="form__button" type="submit">Сохранить</button>
       </form>
     </div>
+  </div>
+    <div class="overlay popup__add-cards">
+      <div class="form page__form">
+        <button class="close-button close-button__add-cards" type="button"></button>
+        <h2 class=form__title>Новое место</h2>
+        <form class="form__profile form__profile_add-cards" method="POST" name="form__profile_add-cards">
+          <div class="form__inputs">
+            <input class="form__input form__input_input-card-name_name" type="text" placeholder="Название" name="name-card">
+            <input class="form__input form__input_input-card-name_img" type="text" placeholder="Ссылка на картинку" name="link">
+          </div>
+          <button class="form__button" type="submit">Создать</button>
+        </form>
+      </div>
   </div>
   <script src="scripts/script.js"></script>
 </body>
