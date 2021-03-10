@@ -58,20 +58,21 @@ const initialCards = [
 ];
 const cardsContainer = document.querySelector('.elements');
 
-function renderListString (item) {
-  return `<div class="element">
-  <img class="element__image" src=${item.link} alt="Карачаевск">
-  <div class="element__description">
-    <h2 class="element__title">${item.name}</h2>
-    <button class="group" type="button"></button>
-  </div>
-</div>`;
-  };
+const templateElement = document.querySelector('.template');
 
+function createCardDomNode(item){
+  const newItem = templateElement.content.cloneNode(true);
+  const titleCard = newItem.querySelector('.element__title');
+  const imgCard = newItem.querySelector('.element__image');
+  titleCard.textContent = item.name;
+  imgCard.src = item.link;
+  return newItem;
+}
+  
 function renderList(){
-  const cardResult = initialCards.map(renderListString).join('');
+  const cardResult = initialCards.map(createCardDomNode);
 
-  cardsContainer.insertAdjacentHTML('afterbegin',cardResult );
+  cardsContainer.append(...cardResult);
 
   
 }
@@ -96,12 +97,18 @@ function popUpAddActive() {
     const inputCardImg = formProfileAddCards.querySelector('.form__input_input-card-name_img');
     const inputImg = inputCardImg.value;
    
-    const newCardName = renderListString({name: inputTitle, link: inputImg});
+    const newCardName = createCardDomNode({name: inputTitle, link: inputImg});
     
-    cardsContainer.insertAdjacentHTML('afterbegin',newCardName);
+    cardsContainer.prepend(newCardName);
+    
     popUpAddClose()
     
     inputCardName.value = '';
     inputCardImg.value = '';
+    
   }
+
   formProfileAddCards.addEventListener('submit', addCardsFormListener);
+
+
+  
