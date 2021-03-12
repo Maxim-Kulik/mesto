@@ -11,15 +11,18 @@ let addButton = document.querySelector('.add-button');
 let closeButtonAdd = document.querySelector('.close-button__add-cards');
 let formProfileAddCards = document.querySelector('.form__profile_add-cards');
 let likeButton = document.querySelectorAll('.group');
+let popupImagecard = document.querySelector('.popup__image-cards');
+
+
 
 function popUpActive() {
 inputName.value = formName.textContent;
 inputStatus.value = formStatus.textContent;
-formOverlay.classList.add('overlay_open');
+formOverlay.classList.add('popup_open');
 }
 editButton.addEventListener('click', popUpActive);
 function popUpClose() {
-  formOverlay.classList.remove('overlay_open');
+  formOverlay.classList.remove('popup_open');
 }
 closeButton.addEventListener('click', popUpClose);
 function editSave(evt) {
@@ -60,6 +63,39 @@ const cardsContainer = document.querySelector('.elements');
 
 const templateElement = document.querySelector('.template');
 
+function likeButtonFunction(evt) {
+  evt.target.classList.toggle('group_active');
+}
+
+function trashButtonFunction(evt) {
+  evt.target.closest('.element').remove();
+}
+
+function popupImageActive(item) {
+  const popupImage = document.querySelector('.popup-content-wrapper__image');
+
+  const popupTitle = document.querySelector('.popup-content-wrapper__title');
+
+  popupTitle.textContent = item.name;
+  popupImage.src = item.link;
+
+  popupImagecard.classList.add('popup_open');
+}
+
+function addButtonListeners(item){
+  const likeButton = item.querySelector('.group');
+
+  likeButton.addEventListener('click', likeButtonFunction);
+
+  const trashButton = item.querySelector('.trash-button');
+
+  trashButton.addEventListener('click', trashButtonFunction);
+
+  const elementImage = item.querySelector('.element__image')
+
+  elementImage.addEventListener('click', function(){popupImageActive(item);});
+}
+
 function createCardDomNode(item){
   const newItem = templateElement.content.cloneNode(true);
   const titleCard = newItem.querySelector('.element__title');
@@ -70,7 +106,11 @@ function createCardDomNode(item){
 }
   
 function renderList(){
-  const cardResult = initialCards.map(createCardDomNode);
+  const cardResult = initialCards.map(function(item){
+    const newCard = createCardDomNode(item);
+    addButtonListeners(newCard);
+    return newCard;
+  });
 
   cardsContainer.append(...cardResult);
 
@@ -79,11 +119,11 @@ function renderList(){
 renderList();
 
 function popUpAddActive() {
-  formOverlayAdd.classList.add('overlay_open');
+  formOverlayAdd.classList.add('popup_open');
   }
   addButton.addEventListener('click', popUpAddActive);
   function popUpAddClose() {
-    formOverlayAdd.classList.remove('overlay_open');
+    formOverlayAdd.classList.remove('popup_open');
   }
   closeButtonAdd.addEventListener('click', popUpAddClose);
   
@@ -99,6 +139,8 @@ function popUpAddActive() {
    
     const newCardName = createCardDomNode({name: inputTitle, link: inputImg});
     
+    addButtonListeners(newCardName);
+
     cardsContainer.prepend(newCardName);
     
     popUpAddClose()

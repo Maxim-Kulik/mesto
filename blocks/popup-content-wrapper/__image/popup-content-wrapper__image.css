@@ -1,0 +1,9 @@
+.popup-content-wrapper__image {
+    max-height: 75vh;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    
+    
+   
+}
