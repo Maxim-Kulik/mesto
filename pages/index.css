@@ -3,6 +3,9 @@
 @import url(../vendor/fonts.css);
 
 
+@import url(../blocks/popup/_image-cards/popup_image-cards.css);
+
+
 @import url(../blocks/page/page.css);
 
 @import url(../blocks/page/__blocks/page__blocks.css);

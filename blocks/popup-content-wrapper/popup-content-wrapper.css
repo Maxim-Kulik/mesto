@@ -1,9 +1,10 @@
 .popup-content-wrapper {
-    display: flex;
-    max-width: 816px;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-   width: auto;
-   overflow: hidden;
+  display: flex;
+  max-width: 75vw;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: auto;
+  position: relative;
 }
+
