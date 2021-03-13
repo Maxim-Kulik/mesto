@@ -78,6 +78,7 @@ function popupImageActive(item) {
 
   popupTitle.textContent = item.name;
   popupImage.src = item.link;
+  popupImage.alt = item.name;
 
   popupImagecard.classList.add('popup_open');
 }
@@ -94,6 +95,7 @@ function createCardDomNode(item){
   const imgCard = newItem.querySelector('.element__image');
   titleCard.textContent = item.name;
   imgCard.src = item.link;
+  imgCard.alt = item.name;
 
   const likeButton = newItem.querySelector('.group');
 
