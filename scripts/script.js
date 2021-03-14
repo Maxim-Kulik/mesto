@@ -24,18 +24,18 @@ function closePopup(popup){
   popup.classList.remove('popup_open');
 }
 
-function createpopUpActive() {
+function createPopUpActive() {
 inputName.value = formName.textContent;
 inputStatus.value = formStatus.textContent;
 
 openPopup(formOverlay);
 }
 
-editButton.addEventListener('click', createpopUpActive);
+editButton.addEventListener('click', createPopUpActive);
 
 closeButton.addEventListener('click', function(){closePopup(formOverlay);});
 
-function createeditSave(evt) {
+function createEditSave(evt) {
 evt.preventDefault();
 
 formName.textContent = inputName.value;
@@ -44,7 +44,7 @@ formStatus.textContent = inputStatus.value;
 closePopup(formOverlay);
 }
 
-formProfile.addEventListener('submit', createeditSave);
+formProfile.addEventListener('submit', createEditSave);
 
 const initialCards = [
   {
@@ -73,15 +73,15 @@ const initialCards = [
   }
 ];
 
-function addlikeButtonFunction(evt) {
+function addLikeButtonFunction(evt) {
   evt.target.classList.toggle('group_active');
 }
 
-function addtrashButtonFunction(evt) {
+function addTrashButtonFunction(evt) {
   evt.target.closest('.element').remove();
 }
 
-function createpopupImageActive(item) {
+function createPopupImageActive(item) {
   const popupImage = document.querySelector('.popup-content-wrapper__image');
   const popupTitle = document.querySelector('.popup-content-wrapper__title');
 
@@ -104,12 +104,12 @@ function createCardDomNode(item){
   imgCard.alt = item.name;
 
   const likeButton = newItem.querySelector('.group');
-  likeButton.addEventListener('click', addlikeButtonFunction);
+  likeButton.addEventListener('click', addLikeButtonFunction);
 
   const trashButton = newItem.querySelector('.trash-button');
-  trashButton.addEventListener('click', addtrashButtonFunction);
+  trashButton.addEventListener('click', addTrashButtonFunction);
 
-  imgCard.addEventListener('click', function(){createpopupImageActive(item);});
+  imgCard.addEventListener('click', function(){createPopupImageActive(item);});
   
   return newItem;
   }
