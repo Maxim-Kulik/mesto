@@ -46,8 +46,10 @@
       <h2 class=form__title>Редактировать профиль</h2>
       <form class="form__profile form__profile_edit" method="POST" name="form__profile_edit">
         <div class="form__inputs">
-          <input class="form__input form__input_input-name_name" type="text" placeholder="Имя" name="name">
-          <input class="form__input form__input_input-name_status" type="text" placeholder="О себе" name="status">
+          <input class="form__input form__input_input-name_name" type="text" placeholder="Имя" name="name" id="name-card" minlength="2" maxlength="40" required>
+          <span class="form__error" id="name-card-error"></span>
+          <input class="form__input form__input_input-name_status" type="text" placeholder="О себе" name="status" id="status-card" minlength="2" maxlength="200" required>
+          <span class="form__error" id="status-card-error"></span>
         </div>
         <button class="form__button" type="submit">Сохранить</button>
       </form>
@@ -59,8 +61,10 @@
         <h2 class=form__title>Новое место</h2>
         <form class="form__profile form__profile_add-cards" method="POST" name="form__profile_add-cards">
           <div class="form__inputs">
-            <input class="form__input form__input_input-card-name_name" type="text" placeholder="Название" name="name-card">
-            <input class="form__input form__input_input-card-name_img" type="text" placeholder="Ссылка на картинку" name="link">
+            <input class="form__input form__input_input-card-name_name" type="text" placeholder="Название" name="name-card" id="name-card" minlength="2" maxlength="30" required>
+            <span class="form__error" id="name-card-error"></span>
+            <input class="form__input form__input_input-card-name_img" type="url" placeholder="Ссылка на картинку" name="link" id="link" required>
+            <span class="form__error" id="link-error"></span>
           </div>
           <button class="form__button" type="submit">Создать</button>
         </form>
@@ -73,6 +77,7 @@
       <p class="popup-content-wrapper__title">Байкал</p>
     </div>
   </div>
-  <script src="scripts/script.js"></script>
+  <script src="scripts/validate.js"></script>
+  <script src="scripts/index.js"></script>
 </body>
 </html>

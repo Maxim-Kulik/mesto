@@ -46,10 +46,10 @@ const closeByOverlayClick = (evt) => {
   popupImagecard.addEventListener('click', closeByOverlayClick);
 
 const clearErrorElements = (formElement) => {
-  const errorList = Array.from(formElement.querySelectorAll('.error'));
+  const errorList = Array.from(formElement.querySelectorAll('.form__error'));
 
   errorList.forEach((errorElement) => {
-  errorElement.classList.remove('error_visible')
+  errorElement.classList.remove('form__error_visible')
   });
 
   const errorInputList = Array.from(formElement.querySelectorAll('.form__input'));
@@ -83,7 +83,6 @@ inputName.value = formName.textContent;
 inputStatus.value = formStatus.textContent;
 
 clearErrorElements(formProfile);
-
 openPopup(formOverlay);
 }
 
@@ -98,7 +97,6 @@ formName.textContent = inputName.value;
 formStatus.textContent = inputStatus.value;
 
 clearErrorElements(formProfile);
-
 closePopup(formOverlay);
 }
 
@@ -216,78 +214,5 @@ function addCardsFormListener (evt) {
   }
 
   formProfileAddCards.addEventListener('submit', addCardsFormListener);
-
-  const hasInvalidInput = (inputList)=> {
-    return inputList.some(inputElement => !inputElement.validity.valid);
-  }
-
-  const toggleButtonState = (inputList, buttonElement) => {
-  if(/*хотя бы один невалид*/ hasInvalidInput(inputList)){
-  buttonElement.classList.add('form__button_invalid');
-  buttonElement.setAttribute('disabled', true);
-  }else{
-    buttonElement.classList.remove('form__button_invalid');
-    buttonElement.removeAttribute('disabled');
-  }
-  };
-
-  const showInputError = (formElement, inputElement) => {
-
-   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-   
-  inputElement.classList.add('form__input_type_error');
-  
-  errorElement.textContent = inputElement.validationMessage;
-
-  errorElement.classList.add('form__error_visible');
-  };
-
-  const hideInputError = (formElement, inputElement) => {
-    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-   
-  inputElement.classList.remove('form__input_type_error');
-
-  errorElement.classList.remove('form__error_visible');
-  };
-
-  const checkInput = (formElement, inputElement) => {
-    if(inputElement.validity.valid){
-      hideInputError(formElement, inputElement);
-    } else{
-      showInputError(formElement, inputElement);
-    }
-  };
-
-  const setInputListeners = (formElement) => {
-    const inputList = Array.from(formElement.querySelectorAll('.form__input'));
-
-    const buttonElement = formElement.querySelector('.form__button');
-
-    inputList.forEach(inputElement => {
-      inputElement.addEventListener('input', () => {
-        //проверить состояние поля на валидность 
-        checkInput(formElement, inputElement);
-        // переключить состояние кнопки
-        toggleButtonState(inputList, buttonElement);
-      })
-    });
-  };
-  
-  const enableValidation = () => {
-    const formList = Array.from(document.querySelectorAll('.form__profile'));
-    
-    formList.forEach(formElement => {
-      formElement.addEventListener('submit', (evt) => {
-        evt.preventDefault();
-      });
-      // навесить слушатели для полей формы
-       (formElement);
-    }
-      );
-  };
-
-  enableValidation();
-
   
 
-  

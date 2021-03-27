@@ -1,0 +1,9 @@
+.form__button_invalid{
+background-color: white;
+border: 1px solid rgba(0, 0, 0, 0.2);
+color: rgba(0, 0, 0, 0.2);;
+}
+
+.form__button_invalid:hover {
+  opacity: 1;
+}
