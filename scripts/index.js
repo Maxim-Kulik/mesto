@@ -15,8 +15,12 @@ const likeButton = document.querySelectorAll('.group');
 const closeButtonImageCards = document.querySelector('.close-button_image-cards');
 const cardsContainer = document.querySelector('.elements');
 const templateElement = document.querySelector('.template');
-const popup = document.querySelector('.popup') //...........................
+const popup = document.querySelector('.popup');
 const form = document.querySelector('.form__profile');
+const popupImage = document.querySelector('.popup-content-wrapper__image');
+const popupTitle = document.querySelector('.popup-content-wrapper__title');
+const inputCardName = formProfileAddCards.querySelector('.form__input_input-card-name_name');
+const inputCardImg = formProfileAddCards.querySelector('.form__input_input-card-name_img');
 
 const closePopupEsc = (evt) => {
   const popupActive = document.querySelector('.popup_open');
@@ -138,9 +142,6 @@ function addTrashButtonFunction(evt) {
 }
 
 function createPopupImageActive(item) {
-  const popupImage = document.querySelector('.popup-content-wrapper__image');
-  const popupTitle = document.querySelector('.popup-content-wrapper__title');
-
   popupTitle.textContent = item.name;
   popupImage.src = item.link;
   popupImage.alt = item.name;
@@ -182,8 +183,6 @@ function renderList(){
 renderList();
 
   addButton.addEventListener('click', function(){ 
-    const inputCardName = formProfileAddCards.querySelector('.form__input_input-card-name_name');
-    const inputCardImg = formProfileAddCards.querySelector('.form__input_input-card-name_img');
     inputCardName.value = '';
     inputCardImg.value = '';
     clearErrorElements(formProfileAddCards);
