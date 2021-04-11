@@ -17,10 +17,14 @@ class Card{
     cardImage.src = this._link;
     cardImage.alt = this._name;
     cardTitle.textContent = this._name;
+    this._setEventListeners();
+    return this._element;
+  }
+
+  _setEventListeners(){
     this._addLikeButtonFunction();
     this._addTrashButtonFunction();
     this._activePopupImage();
-    return this._element;
   }
 
   _getTemplateElement() {

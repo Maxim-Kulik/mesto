@@ -24,7 +24,6 @@
       this._checkInput(input);
       this._toggleButtonState();
       });
-      this._toggleButtonState();
     });
   }
 
@@ -52,7 +51,7 @@
   }
 
   _toggleButtonState(){
-    if(this._hasInvalidInput(this._inputList)){
+    if(this._hasInvalidInput(this._inputList) || this._allInputsEmpty(this._inputList)){
       this._buttonElement.classList.add(this._inactiveButtonClass);
       this._buttonElement.setAttribute('disabled', true);
     } else {
@@ -62,8 +61,13 @@
   }
 
   _hasInvalidInput(){
-    return this._inputList.some(inputElement => !inputElement.validity.valid);
+    return this._inputList.some((input) => !input.validity.valid);
+  }
+
+  _allInputsEmpty(){
+    return !this._inputList.some((input) => input.value.length > 0);
   }
 }
+
 
  

@@ -8,10 +8,10 @@ import {initialCards} from './initial-cards.js';
 
 import {openPopup, closePopup} from './utils.js';
 
-const formOverlay = document.querySelector('.popup_edit');
+const popupEdit = document.querySelector('.popup_edit');
 const formOverlayAdd = document.querySelector('.popup_add-cards');
 const editButton = document.querySelector('.edit-button');
-const closeButton = document.querySelector('.close-button');
+const closeButtonEdit = document.querySelector('.close-button_edit-form');
 const formName = document.querySelector('.profile__name');
 const formStatus = document.querySelector('.profile__status');
 const inputName = document.querySelector('.form__input_input-name_name');
@@ -31,53 +31,20 @@ const closeByOverlayClick = (evt) => {
     }
   }
 
-formOverlay.addEventListener('click', closeByOverlayClick);
+popupEdit.addEventListener('click', closeByOverlayClick);
 formOverlayAdd.addEventListener('click', closeByOverlayClick);
 popupImagecard.addEventListener('click', closeByOverlayClick);
-
-const clearErrorElements = (formElement) => {
-  const errorList = Array.from(formElement.querySelectorAll('.form__error'));
-
-  errorList.forEach((errorElement) => {
-    errorElement.classList.remove('form__error_visible')
-  });
-
-  const errorInputList = Array.from(formElement.querySelectorAll('.form__input'));
-
-  errorInputList.forEach((errorElement) => {
-    errorElement.classList.remove('form__input_type_error')
-
-    clearErrorButton(formElement);
-  });
-}
-
-const clearErrorButton = (formElement) => {
-  const buttonElement = formElement.querySelector('.form__button');
-
-  buttonElement.classList.remove('form__button_invalid');
-
-  buttonElement.removeAttribute('disabled');
-}
-
-const disabledButton = (formElement) => {
-  const buttonElement = formElement.querySelector('.form__button');
-
-  buttonElement.classList.add('form__button_invalid'); 
-  
-  buttonElement.setAttribute('disabled', true);
-}
 
 function createPopUpActive() {
   inputName.value = formName.textContent;
   inputStatus.value = formStatus.textContent;
 
-  clearErrorElements(formProfile);
-  openPopup(formOverlay);
+  openPopup(popupEdit);
 }
 
 editButton.addEventListener('click', createPopUpActive);
 
-closeButton.addEventListener('click', function(){closePopup(formOverlay);});
+closeButtonEdit.addEventListener('click', function(){closePopup(popupEdit);});
 
 function createEditSave(evt) {
   evt.preventDefault();
@@ -85,8 +52,7 @@ function createEditSave(evt) {
   formName.textContent = inputName.value;
   formStatus.textContent = inputStatus.value;
 
-  clearErrorElements(formProfile);
-  closePopup(formOverlay);
+  closePopup(popupEdit);
 }
 
 formProfile.addEventListener('submit', createEditSave);
@@ -96,9 +62,6 @@ closeButtonImageCards.addEventListener('click', function(){closePopup(popupImage
 addButton.addEventListener('click', function(){ 
   inputCardName.value = '';
   inputCardImg.value = '';
-  clearErrorElements(formProfileAddCards);
-
-  disabledButton(formProfileAddCards);
 
   openPopup(formOverlayAdd);});
 
@@ -117,7 +80,7 @@ initialCards.map(function(item){
   cardsContainer.append(newCard.createCard());
 });
 
-const editFormValidator = new FormValidator(configValidation, formOverlay);
+const editFormValidator = new FormValidator(configValidation, popupEdit);
 editFormValidator.enableValidation();
 
 const addCardFormValidator = new FormValidator(configValidation, formOverlayAdd);
