@@ -35,14 +35,17 @@ popupEdit.addEventListener('click', closeByOverlayClick);
 formOverlayAdd.addEventListener('click', closeByOverlayClick);
 popupImagecard.addEventListener('click', closeByOverlayClick);
 
-function createPopUpActive() {
+
+function createEditPopUpActive() {
   inputName.value = formName.textContent;
   inputStatus.value = formStatus.textContent;
 
+  editFormValidator.activeButton();
+  editFormValidator.clearErrorElements();
   openPopup(popupEdit);
 }
 
-editButton.addEventListener('click', createPopUpActive);
+editButton.addEventListener('click', createEditPopUpActive);
 
 closeButtonEdit.addEventListener('click', function(){closePopup(popupEdit);});
 
@@ -59,11 +62,17 @@ formProfile.addEventListener('submit', createEditSave);
 
 closeButtonImageCards.addEventListener('click', function(){closePopup(popupImagecard);});
 
-addButton.addEventListener('click', function(){ 
+function createAddPopupActive() {
   inputCardName.value = '';
   inputCardImg.value = '';
 
-  openPopup(formOverlayAdd);});
+  addCardFormValidator.inctiveButton();
+  addCardFormValidator.clearErrorElements();
+ 
+  openPopup(formOverlayAdd);
+}
+
+addButton.addEventListener('click', createAddPopupActive);
 
 closeButtonAdd.addEventListener('click', function(){closePopup(formOverlayAdd);});
 
@@ -85,6 +94,7 @@ editFormValidator.enableValidation();
 
 const addCardFormValidator = new FormValidator(configValidation, formOverlayAdd);
 addCardFormValidator.enableValidation();
+
 
 function addCardsFormListener (evt) {
   evt.preventDefault();
