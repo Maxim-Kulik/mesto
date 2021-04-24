@@ -1,3 +1,5 @@
+import '../pages/index.css';
+
 import {popupEdit, formOverlayAdd, editButton, formName, formStatus, inputName, 
   inputStatus, addButton, inputCardName, inputCardImg, cardsContainer} from './contants.js';
 

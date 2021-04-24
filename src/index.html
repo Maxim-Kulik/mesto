@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <link rel="stylesheet" href="pages/index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto</title>
 </head>
 <body class="page">
   <header class="header page__blocks">
-    <img class="header__logo" src="images/logo.svg" alt="Логотип">
+    <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип">
   </header>
   <main class="content page__blocks">
     <section class="profile">
-      <img class="profile__avatar" src="images/Avatar.png" alt="Аватарка в профиле">
+      <img class="profile__avatar" src="<%=require('./images/Avatar.png')%>" alt="Аватарка в профиле">
       <div class="profile__info">
         <div class="profile__description">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -77,6 +76,5 @@
       <p class="popup-content-wrapper__title">Байкал</p>
     </div>
   </div>
-  <script src="scripts/index.js" type="module"></script>
 </body>
 </html>
