@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="pages/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+</head>
+<body class="page">
+  <header class="header page__blocks">
+    <img class="header__logo" src="images/logo.svg" alt="Логотип">
+  </header>
+  <main class="content page__blocks">
+    <section class="profile">
+      <img class="profile__avatar" src="images/Avatar.png" alt="Аватарка в профиле">
+      <div class="profile__info">
+        <div class="profile__description">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <p class="profile__status">Исследователь океана</p>
+        </div>
+        <button class="edit-button" type="button"></button>
+      </div>
+      <button class="add-button" type="button" ></button>
+    </section>
+    <section class="elements">
+
+     <template class="template">
+      <div class="element">
+        <img class="element__image" src='https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg' alt="Карачаевск">
+        <div class="element__description">
+          <h2 class="element__title"></h2>
+          <button class="group" type="button"></button>
+        </div>
+        <button class="trash-button" type="button"></button>
+      </div>
+     </template>
+
+    </section>
+  </main>
+  <footer class="footer page__blocks">
+    <p class="footer__copyright">© 2020 Mesto Russia</p>
+  </footer>
+  <div class="popup popup_edit">
+    <div class="form page__form">
+      <button class="close-button close-button_edit-form" type="button"></button>
+      <h2 class=form__title>Редактировать профиль</h2>
+      <form class="form__profile form__profile_edit" method="POST" name="form__profile_edit">
+        <div class="form__inputs">
+          <input class="form__input form__input_input-name_name" type="text" placeholder="Имя" name="name" id="name" minlength="2" maxlength="40" required>
+          <span class="form__error" id="name-error"></span>
+          <input class="form__input form__input_input-name_status" type="text" placeholder="О себе" name="status" id="status" minlength="2" maxlength="200" required>
+          <span class="form__error" id="status-error"></span>
+        </div>
+        <button class="form__button" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+    <div class="popup popup_add-cards">
+      <div class="form page__form">
+        <button class="close-button close-button_add-cards" type="button"></button>
+        <h2 class=form__title>Новое место</h2>
+        <form class="form__profile form__profile_add-cards" method="POST" name="form__profile_add-cards">
+          <div class="form__inputs">
+            <input class="form__input form__input_input-card-name_name" type="text" placeholder="Название" name="place" id="name-card" minlength="2" maxlength="30" required>
+            <span class="form__error" id="name-card-error"></span>
+            <input class="form__input form__input_input-card-name_img" type="url" placeholder="Ссылка на картинку" name="link" id="link" required>
+            <span class="form__error" id="link-error"></span>
+          </div>
+          <button class="form__button" type="submit">Создать</button>
+        </form>
+      </div>
+  </div>
+  <div class="popup popup_image-cards">
+    <div class="popup-content-wrapper">
+      <button class="close-button close-button_image-cards" type="button"></button> 
+      <img class="popup-content-wrapper__image" src='https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg' alt="Байкал">
+      <p class="popup-content-wrapper__title">Байкал</p>
+    </div>
+  </div>
+  <script src="scripts/index.js" type="module"></script>
+</body>
+</html>
