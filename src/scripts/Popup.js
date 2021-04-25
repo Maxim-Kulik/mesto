@@ -5,17 +5,11 @@ export default class Popup{
       
     } 
     setEventListeners(){
-        this._popupSelector.querySelector('.close-button').addEventListener('click', () => {this.close()});
-
-        const popupAll = document.querySelectorAll('.popup');
-        
-        popupAll.forEach(popup => {
-          popup.addEventListener('click', (evt) => {
-            if (evt.target.classList.contains('popup_open')){
-              this.close();
-            }
-          })
-        })
+        this._popupSelector.addEventListener('click', (evt) => {
+          if (evt.target.classList.contains('popup_open') || evt.target.classList.contains('close-button')) {
+            this.close();
+          }
+        });
     }
 
     _handleEscClose(evt) {

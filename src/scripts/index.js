@@ -9,10 +9,6 @@ import FormValidator from './FormValidator.js';
 
 import {initialCards} from './initial-cards.js';
 
-import {openPopup, closePopup} from './utils.js';
-
-import Popup from './Popup.js';
-
 import Section from './Section.js';
 
 import PopupWithImage from './PopupWithImage.js';
@@ -32,9 +28,6 @@ const configValidation = {
 
 
 function createAddPopupActive() {
-  inputCardName.value = '';
-  inputCardImg.value = '';
-
   addCardFormValidator.inctiveButton();
   addCardFormValidator.clearErrorElements();
  
@@ -62,7 +55,6 @@ const userInfo = new UserInfo('.profile__name', '.profile__status');
 
 const editCardPopup = new PopupWithForm('.popup_edit', (input) => {
   userInfo.setUserInfo(input.name, input.status);
-  editCardPopup.close();
 })
 editCardPopup.setEventListeners();
 
@@ -73,7 +65,6 @@ const addCardPopup = new PopupWithForm('.popup_add-cards', (input) => {
   const newCard = createNewCard(input.place, input.link)
   const newElement = newCard.createCard();
   cardsContainer.prepend(newElement)
-  addCardPopup.close();
 });
 addCardPopup.setEventListeners();
 

@@ -1,9 +1,3 @@
-import {openPopup} from './utils.js';
-
-import {popupImage, popupTitle, popupImagecard, } from './contants.js';
-
-import PopupWithImage from './PopupWithImage.js';
-
 class Card{
   constructor (name, link, handleCardClick, cardSelector) {
     this._name = name;
