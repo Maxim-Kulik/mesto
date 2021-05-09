@@ -4,6 +4,7 @@
   background-color: black;
   color:white;
   margin-top:0;
+  margin-bottom: 36px;
   padding: 0;
   margin-left: 36px;
   margin-right: 36px;
@@ -21,5 +22,6 @@
     margin-left:0;
     margin-right: 0;
     margin-top: 0;
+    margin-bottom: 20px;
   }
 }

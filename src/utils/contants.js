@@ -1,4 +1,5 @@
 const popupEdit = document.querySelector('.popup_edit');
+const popupEditAvatar = document.querySelector('.popup_edit-avatar');
 const formOverlayAdd = document.querySelector('.popup_add-cards');
 const editButton = document.querySelector('.edit-button');
 const closeButtonEdit = document.querySelector('.close-button_edit-form');
@@ -14,10 +15,11 @@ const closeButtonImageCards = document.querySelector('.close-button_image-cards'
 const inputCardName = formProfileAddCards.querySelector('.form__input_input-card-name_name');
 const inputCardImg = formProfileAddCards.querySelector('.form__input_input-card-name_img');
 const cardsContainer = document.querySelector('.elements');
+const inputAvatarLink = document.querySelector('.form__input_input-avatar-link_img');
 
 const popupImage = document.querySelector('.popup-content-wrapper__image');
 const popupTitle = document.querySelector('.popup-content-wrapper__title');
 const popupImagecard = document.querySelector('.popup_image-cards');
 
 export {popupImage, popupTitle, popupImagecard, popupEdit, formOverlayAdd, editButton, closeButtonEdit, formName, formStatus, inputName, 
-inputStatus, formProfile, addButton, closeButtonAdd, formProfileAddCards, closeButtonImageCards, inputCardName, inputCardImg, cardsContainer};
+inputStatus, formProfile, addButton, closeButtonAdd, formProfileAddCards, closeButtonImageCards, inputCardName, inputCardImg, cardsContainer, inputAvatarLink, popupEditAvatar};

@@ -12,10 +12,11 @@
   <main class="content page__blocks">
     <section class="profile">
       <img class="profile__avatar" src="<%=require('./images/Avatar.png')%>" alt="Аватарка в профиле">
+      <div class="profile__avatar-overlay"></div>
       <div class="profile__info">
         <div class="profile__description">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <p class="profile__status">Исследователь океана</p>
+          <h1 class="profile__name"></h1>
+          <p class="profile__status"></p>
         </div>
         <button class="edit-button" type="button"></button>
       </div>
@@ -28,7 +29,10 @@
         <img class="element__image" src='https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg' alt="Карачаевск">
         <div class="element__description">
           <h2 class="element__title"></h2>
+          <div class="like-description">
           <button class="group" type="button"></button>
+          <span class="like-counter"></span>
+          </div>
         </div>
         <button class="trash-button" type="button"></button>
       </div>
@@ -50,7 +54,7 @@
           <input class="form__input form__input_input-name_status" type="text" placeholder="О себе" name="status" id="status" minlength="2" maxlength="200" required>
           <span class="form__error" id="status-error"></span>
         </div>
-        <button class="form__button" type="submit">Сохранить</button>
+        <button class="form__button form__button_edit-profile" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
@@ -65,10 +69,27 @@
             <input class="form__input form__input_input-card-name_img" type="url" placeholder="Ссылка на картинку" name="link" id="link" required>
             <span class="form__error" id="link-error"></span>
           </div>
-          <button class="form__button" type="submit">Создать</button>
+          <button class="form__button form__button_add-card" type="submit">Создать</button>
         </form>
       </div>
   </div>
+
+
+  <div class="popup popup_edit-avatar">
+    <div class="form page__form">
+      <button class="close-button close-button_edit-avatar" type="button"></button>
+      <h2 class=form__title>Обновить аватар</h2>
+      <form class="form__profile form__profile_edit-avatar" method="POST" name="form__profile_edit-avatar">
+        <div class="form__inputs">
+          <input class="form__input form__input_input-avatar-link_img" type="url" placeholder="Ссылка на картинку" name="link" id="link" required>
+          <span class="form__error" id="link-error"></span>
+        </div>
+        <button class="form__button form__button_edit-avatar" type="submit">Создать</button>
+      </form>
+    </div>
+</div>
+
+
   <div class="popup popup_image-cards">
     <div class="popup-content-wrapper">
       <button class="close-button close-button_image-cards" type="button"></button> 
@@ -76,5 +97,15 @@
       <p class="popup-content-wrapper__title">Байкал</p>
     </div>
   </div>
+
+  <div class="popup popup_delete-card">
+    <div class="form page__form">
+      <button class="close-button close-button_delete-card" type="button"></button>
+      <h2 class=form__title>Вы уверены?</h2>
+      <form class="form__profile form__profile_delete-card" method="POST" name="form__profile_delete-card">
+        <button class="form__button form__button_delete-card" type="submit">Да</button>
+      </form>
+    </div>
+</div>
 </body>
 </html>

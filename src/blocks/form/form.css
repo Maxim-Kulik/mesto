@@ -2,7 +2,6 @@
   box-sizing: border-box;
   background-color:white;
   width:430px;
-  height:330px;
   border-radius: 10px;
   position: relative;
 }
@@ -10,6 +9,5 @@
 @media (max-width:620px) {
 .form {
     width:282px;
-    height:322px;
   }
 }
