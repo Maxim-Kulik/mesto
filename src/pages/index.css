@@ -61,6 +61,8 @@
 
 @import url(../blocks/trash-button/trash-button.css);
 
+@import url(../blocks/trash-button/_none/trash-button_none.css);
+
 
 @import url(../blocks/group/_active/group_active.css);
 

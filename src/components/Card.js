@@ -1,10 +1,11 @@
 class Card{
-  constructor (name, link, id, userId,  likes, handleCardClick, handleCardDelete, handleLikeAdd, handleLikeDelete, cardSelector, api) {
+  constructor (name, link, id, userId,  likes, owner, handleCardClick, handleCardDelete, handleLikeAdd, handleLikeDelete, cardSelector, api) {
     this._name = name;
     this._link = link;
     this._id = id;
     this._userId = userId
     this._likes = likes;
+    this._owner = owner;
     this._cardSelector = cardSelector;
     this._handleCardClick = handleCardClick;
     this._handleCardDelete = handleCardDelete;
@@ -22,7 +23,7 @@ class Card{
     cardImage.alt = this._name;
     cardTitle.textContent = this._name;
     this._setEventListeners();
-
+    this._createTrashButton()
     this._updateLikesView()
 
     return this._view;
@@ -62,6 +63,18 @@ class Card{
 
    addTrashButtonFunction() {
     this._view.remove();
+  }
+
+  _createTrashButton(){
+  if(this._renderTrashButton() === true){
+    this._view.querySelector('.trash-button').classList.remove('trash-button_none');
+  }else{
+    this._view.querySelector('.trash-button').classList.add('trash-button_none');
+  }
+ }
+
+  _renderTrashButton(){
+      return this._owner._id === this._userId;
   }
 
   _isLiked(){
