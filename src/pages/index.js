@@ -76,11 +76,13 @@ const editAvatarPopup = new PopupWithForm('.popup_edit-avatar', () => {
   api.editAvatar(inputAvatarLink.value)
   .then((data) => {
     userInfo.setUserInfo(data.name, data.about, data.avatar);
-    renderLoading(false, '.form__button_edit-avatar', 'Сохранение...', 'Сохранить')
     editAvatarPopup.close();
   })
   .catch((err) => {
     console.log(err);
+  })
+  .finally(() => {
+    renderLoading(false, '.form__button_edit-avatar', 'Сохранение...', 'Сохранить')
   })
 })
 editAvatarPopup.setEventListeners();
@@ -97,11 +99,13 @@ const editCardPopup = new PopupWithForm('.popup_edit', () => {
   api.editUserInfo(inputName.value, inputStatus.value)
   .then((data) => {
     userInfo.setUserInfo(data.name, data.about, data.avatar);
-    renderLoading(false, '.form__button_edit-profile', 'Сохранение...', 'Сохранить')
     editCardPopup.close()
   })
   .catch((err) => {
     console.log(err);
+  })
+  .finally(() => {
+    renderLoading(false, '.form__button_edit-profile', 'Сохранение...', 'Сохранить')
   })
 })
 editCardPopup.setEventListeners();
@@ -124,11 +128,13 @@ const addCardPopup = new PopupWithForm('.popup_add-cards', (input) => {
     const newCard = createNewCard(cardData.name, cardData.link, cardData._id, userData._id, cardData.likes, cardData.owner)
   const newElement = newCard.createCard();
   cardsContainer.prepend(newElement)
-  renderLoading(false, '.form__button_add-card', 'Создание...', 'Создать');
     addCardPopup.close();
   })
   .catch((err) => {
     alert(err);
+  })
+  .finally(() => {
+    renderLoading(false, '.form__button_add-card', 'Создание...', 'Создать');
   })
 });
 addCardPopup.setEventListeners();
